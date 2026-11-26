@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build &amp; Tune | Mechanicals Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="shell">
+        <header class="masthead">
+            <div class="mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.5 2.5l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.1-.5-.5-2.1z"/>
+                </svg>
+            </div>
+            <div>
+                <h1>Build &amp; Tune</h1>
+                <p>Mechanicals service pricing calculator</p>
+            </div>
+        </header>
+
+        <div class="layout">
+
+            <section class="panel add" aria-labelledby="addTitle">
+                <h2 id="addTitle">Add a part</h2>
+
+                <div class="input-group">
+                    <label class="field">
+                        <span class="sr-only">Cosmetics price</span>
+                        <span class="prefix" aria-hidden="true">₱</span>
+                        <input type="number" id="servicePrice" placeholder="Cosmetics price"
+                               inputmode="decimal" min="0" step="any" autocomplete="off">
+                    </label>
+                    <button class="btn-primary" onclick="addService()">Add part</button>
+                </div>
+
+                <p class="hint" id="formMessage" role="status">Press Enter to add quickly.</p>
+            </section>
+
+            <section class="panel list" aria-labelledby="listTitle">
+                <div class="panel-head">
+                    <h2 id="listTitle">Parts list</h2>
+                    <span class="count" id="partsBadge">0 parts</span>
+                </div>
+
+                <ul class="parts" id="serviceList"></ul>
+
+                <div class="panel-foot">
+                    <button class="reset-btn" id="resetBtn" onclick="resetCalculator()">Reset calculator</button>
+                </div>
+            </section>
+
+            <aside class="receipt" aria-label="Quote summary">
+                <div class="receipt-head">
+                    <h2>Work order</h2>
+                    <span>Build &amp; Tune</span>
+                </div>
+
+                <dl class="lines">
+                    <div class="line">
+                        <dt>Number of parts</dt>
+                        <dd id="totalParts">0</dd>
+                    </div>
+                    <div class="line">
+                        <dt>Total</dt>
+                        <dd id="subtotal">₱0.00</dd>
+                    </div>
+                </dl>
+
+                <div class="grand">
+                    <span>Total service fee</span>
+                    <strong id="finalTotal">₱0.00</strong>
+                </div>
+            </aside>
+
+        </div>
+
+        <footer>
+            Build &amp; Tune Mechanicals Calculator © 2026
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
