@@ -1,4 +1,4 @@
-const MARKUP = 1.5;
+const MARKUP = 1.8;
 
 let services = [];
 let resetArmed = false;
